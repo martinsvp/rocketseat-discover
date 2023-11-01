@@ -75,6 +75,15 @@ body {
     z-index: 1;
     transform: translateY(-50%);
     cursor: pointer;
+    animation: slide-out .3s;
+}
+
+.switch button:hover {
+    outline: 3px solid var(--highlight-color);
+}
+
+.light .switch button {
+    animation: slide-in .3s forwards;
 }
 
 .switch span {
@@ -153,7 +162,6 @@ footer a {
 }
 
 /* media queries */
-
 @media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg);
@@ -161,5 +169,24 @@ footer a {
     
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animations */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
